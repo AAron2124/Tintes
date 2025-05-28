@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="negro_1_0">#1B1B1B</color>
+    <color name="castano_oscuro_7_2">#4B3621</color>
+    <color name="castano_claro_8">#A9746E</color>
+    <color name="rubio_9_0">#DCD8A8</color>
+    <color name="rubio_dorado_7_3">#FFD700</color>
+    <color name="rubio_nacarado_7_2">#E6D8AD</color>
+    <color name="rubio_oscuro">#D1A054</color>
+    <color name="castano_profundo_5_0">#5B3A29</color>
+    <color name="pelirrojo_cobrizo">#B55239</color>
+    <color name="texto_oscuro">#2E2E2E</color>
+    <color name="fondo_tabla">#F5F5F5</color> <!-- gris muy claro para fondo de tabla -->
+    <color name="fondo_general">#FFFFFF</color> <!-- blanco, fondo neutro claro -->
+
+</resources>

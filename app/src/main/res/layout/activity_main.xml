@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Menú Principal"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Botón Inventario -->
+    <Button
+        android:id="@+id/btnInventario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Inventario de Tintes"
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Botón Clientes -->
+    <Button
+        android:id="@+id/btnClientes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Clientes"
+        app:layout_constraintTop_toBottomOf="@id/btnInventario"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Botón Colorimetría -->
+    <Button
+        android:id="@+id/btnColorimetria"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Colorimetría"
+        app:layout_constraintTop_toBottomOf="@id/btnClientes"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Botón Guía de Aplicación -->
+    <Button
+        android:id="@+id/btnGuia"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Guía de Aplicación"
+        app:layout_constraintTop_toBottomOf="@id/btnColorimetria"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/titulo_guia"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Guía de Aplicación de Tintes"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Scroll para contenido -->
+    <ScrollView
+        android:id="@+id/scroll_contenido"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/titulo_guia"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Paso 1 -->
+            <TextView
+                android:id="@+id/paso1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Preparar el cabello limpio y seco."
+                android:textSize="16sp"
+                android:paddingBottom="8dp"/>
+
+            <!-- Paso 2 -->
+            <TextView
+                android:id="@+id/paso2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. Mezclar el tinte según las instrucciones del fabricante."
+                android:textSize="16sp"
+                android:paddingBottom="8dp"/>
+
+            <!-- Paso 3 -->
+            <TextView
+                android:id="@+id/paso3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. Aplicar el tinte uniformemente desde la raíz hasta las puntas."
+                android:textSize="16sp"
+                android:paddingBottom="8dp"/>
+
+            <!-- Paso 4 -->
+            <TextView
+                android:id="@+id/paso4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4. Dejar actuar el tinte durante el tiempo recomendado."
+                android:textSize="16sp"
+                android:paddingBottom="8dp"/>
+
+            <!-- Paso 5 -->
+            <TextView
+                android:id="@+id/paso5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5. Enjuagar con abundante agua tibia hasta que el agua salga clara."
+                android:textSize="16sp"
+                android:paddingBottom="8dp"/>
+
+            <!-- Consejo -->
+            <TextView
+                android:id="@+id/consejo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Consejo: Usa guantes para proteger tus manos y realiza una prueba de alergia antes."
+                android:textColor="#D32F2F"
+                android:textStyle="italic"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

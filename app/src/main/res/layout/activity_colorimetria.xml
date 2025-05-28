@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Título -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Colorimetría"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <!-- Selector de Subtono -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subtono de piel:" />
+        <Spinner
+            android:id="@+id/spinnerSubtono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Selector de Color de Ojos -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Color de ojos:" />
+        <Spinner
+            android:id="@+id/spinnerOjos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Selector de Color Natural de Cabello -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Color natural de cabello:" />
+        <Spinner
+            android:id="@+id/spinnerCabello"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Botón para obtener sugerencia -->
+        <Button
+            android:id="@+id/btnSugerirTinte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Obtener sugerencia" />
+
+        <!-- Resultado -->
+        <TextView
+            android:id="@+id/tvResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Tu tono sugerido aparecerá aquí"
+            android:textStyle="italic"
+            android:textAlignment="center"
+            android:textColor="#444"/>
+
+    </LinearLayout>
+</ScrollView>
