@@ -12,15 +12,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Projecto_Final"
         tools:targetApi="31">
+
+        <!-- Login como actividad principal -->
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- MainActivity normal, sin launcher -->
+        <activity android:name=".MainActivity" android:exported="true" />
+
+        <!-- Catálogo -->
+        <activity android:name=".CatalogoActivity" android:exported="true" />
+
+        <!-- Clientes -->
+        <activity android:name=".ClientesActivity" android:exported="true" />
+        <activity android:name=".FormularioClienteActivity" android:exported="true" />
+
     </application>
 
 </manifest>

@@ -1,8 +1,11 @@
 package com.example.projecto_final;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -110,4 +113,106 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USUARIOS);
         onCreate(db);
     }
+
+    // Insertar cliente
+    public void insertarCliente(Cliente cliente) {
+        SQLiteDatabase db = getWritableDatabase();
+        String sql = "INSERT INTO " + TABLE_CLIENTES + " (" +
+                COL_NOMBRE + ", " + COL_TELEFONO + ", " + COL_FECHA_APLICACION + ", " +
+                COL_TONO_TINTE + ", " + COL_SUGERENCIAS + ", " + COL_COMPLEMENTO + ", " +
+                COL_DECOLORANTE + ", " + COL_FECHA_RETOQUE + ") VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        db.execSQL(sql, new Object[]{
+                cliente.getNombre(),
+                cliente.getTelefono(),
+                cliente.getFechaAplicacion(),
+                cliente.getTonoTinte(),
+                cliente.getSugerencias(),
+                cliente.getComplemento(),
+                cliente.getDecolorante(),
+                cliente.getFechaRetoque()
+        });
+        db.close();
+    }
+
+    // Actualizar cliente
+    public void actualizarCliente(Cliente cliente) {
+        SQLiteDatabase db = getWritableDatabase();
+        String sql = "UPDATE " + TABLE_CLIENTES + " SET " +
+                COL_NOMBRE + "=?, " + COL_TELEFONO + "=?, " + COL_FECHA_APLICACION + "=?, " +
+                COL_TONO_TINTE + "=?, " + COL_SUGERENCIAS + "=?, " + COL_COMPLEMENTO + "=?, " +
+                COL_DECOLORANTE + "=?, " + COL_FECHA_RETOQUE + "=? WHERE " + COL_ID_CLIENTE + "=?";
+        db.execSQL(sql, new Object[]{
+                cliente.getNombre(),
+                cliente.getTelefono(),
+                cliente.getFechaAplicacion(),
+                cliente.getTonoTinte(),
+                cliente.getSugerencias(),
+                cliente.getComplemento(),
+                cliente.getDecolorante(),
+                cliente.getFechaRetoque(),
+                cliente.getId()
+        });
+        db.close();
+    }
+
+    // Eliminar cliente y devolver true si eliminó 1 o más filas, false si no
+    public boolean eliminarCliente(int id) {
+        SQLiteDatabase db = getWritableDatabase();
+        int filasEliminadas = db.delete(TABLE_CLIENTES, COL_ID_CLIENTE + "=?", new String[]{String.valueOf(id)});
+        db.close();
+        return filasEliminadas > 0;
+    }
+
+    // Obtener cliente por ID
+    public Cliente obtenerClientePorId(int id) {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_CLIENTES + " WHERE " + COL_ID_CLIENTE + "=?",
+                new String[]{String.valueOf(id)});
+        Cliente cliente = null;
+
+        if (cursor.moveToFirst()) {
+            cliente = new Cliente();
+            cliente.setId(cursor.getInt(cursor.getColumnIndexOrThrow(COL_ID_CLIENTE)));
+            cliente.setNombre(cursor.getString(cursor.getColumnIndexOrThrow(COL_NOMBRE)));
+            cliente.setTelefono(cursor.getString(cursor.getColumnIndexOrThrow(COL_TELEFONO)));
+            cliente.setFechaAplicacion(cursor.getString(cursor.getColumnIndexOrThrow(COL_FECHA_APLICACION)));
+            cliente.setTonoTinte(cursor.getString(cursor.getColumnIndexOrThrow(COL_TONO_TINTE)));
+            cliente.setSugerencias(cursor.getString(cursor.getColumnIndexOrThrow(COL_SUGERENCIAS)));
+            cliente.setComplemento(cursor.getString(cursor.getColumnIndexOrThrow(COL_COMPLEMENTO)));
+            cliente.setDecolorante(cursor.getString(cursor.getColumnIndexOrThrow(COL_DECOLORANTE)));
+            cliente.setFechaRetoque(cursor.getString(cursor.getColumnIndexOrThrow(COL_FECHA_RETOQUE)));
+        }
+
+        cursor.close();
+        db.close();
+        return cliente;
+    }
+
+    // Obtener todos los clientes
+    public ArrayList<Cliente> obtenerTodosLosClientes() {
+        ArrayList<Cliente> lista = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_CLIENTES + " ORDER BY " + COL_NOMBRE, null);
+
+        while (cursor.moveToNext()) {
+            Cliente cliente = new Cliente();
+            cliente.setId(cursor.getInt(cursor.getColumnIndexOrThrow(COL_ID_CLIENTE)));
+            cliente.setNombre(cursor.getString(cursor.getColumnIndexOrThrow(COL_NOMBRE)));
+            cliente.setTelefono(cursor.getString(cursor.getColumnIndexOrThrow(COL_TELEFONO)));
+            cliente.setFechaAplicacion(cursor.getString(cursor.getColumnIndexOrThrow(COL_FECHA_APLICACION)));
+            cliente.setTonoTinte(cursor.getString(cursor.getColumnIndexOrThrow(COL_TONO_TINTE)));
+            cliente.setSugerencias(cursor.getString(cursor.getColumnIndexOrThrow(COL_SUGERENCIAS)));
+            cliente.setComplemento(cursor.getString(cursor.getColumnIndexOrThrow(COL_COMPLEMENTO)));
+            cliente.setDecolorante(cursor.getString(cursor.getColumnIndexOrThrow(COL_DECOLORANTE)));
+            cliente.setFechaRetoque(cursor.getString(cursor.getColumnIndexOrThrow(COL_FECHA_RETOQUE)));
+            lista.add(cliente);
+        }
+
+        cursor.close();
+        db.close();
+        return lista;
+    }
+
+
+
 }

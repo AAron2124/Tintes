@@ -9,50 +9,61 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnInventario, btnClientes, btnColorimetria, btnGuia;
+    Button btnInventario, btnClientes, btnColorimetria, btnGuia, btnCatalogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);  // Asegúrate que el nombre coincide con tu XML
+        setContentView(R.layout.activity_main);
 
         btnInventario = findViewById(R.id.btnInventario);
         btnClientes = findViewById(R.id.btnClientes);
         btnColorimetria = findViewById(R.id.btnColorimetria);
         btnGuia = findViewById(R.id.btnGuia);
+        btnCatalogo = findViewById(R.id.btnCatalogo);
 
-        btnInventario.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Abre la actividad de Inventario de tintes
-                Intent intent = new Intent(MainActivity.this, InventarioActivity.class);
-                startActivity(intent);
-            }
-        });
+//        btnInventario.setOnClickListener(new View.OnClickListener() {
+//            @Override
+ //           public void onClick(View v) {
+//                // Abrir Activity Inventario (por definir)
+ //               Intent intent = new Intent(MainActivity.this, InventarioActivity.class);
+  //              startActivity(intent);
+    //        }
+      //  });
 
         btnClientes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Abre la actividad de lista de clientes
-                Intent intent = new Intent(MainActivity.this, ListaClientesActivity.class);
+                // Abrir Activity Clientes
+                Intent intent = new Intent(MainActivity.this, ClientesActivity.class);
                 startActivity(intent);
             }
         });
 
-        btnColorimetria.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Abre la actividad de Colorimetría
-                Intent intent = new Intent(MainActivity.this, ColorimetriaActivity.class);
-                startActivity(intent);
-            }
-        });
 
-        btnGuia.setOnClickListener(new View.OnClickListener() {
+        //       btnColorimetria.setOnClickListener(new View.OnClickListener() {
+ //           @Override
+ //           public void onClick(View v) {
+ //               // Abrir Activity Colorimetria (por definir)
+ //               Intent intent = new Intent(MainActivity.this, ColorimetriaActivity.class);
+ //               startActivity(intent);
+ //           }
+ //       });
+
+ //       btnGuia.setOnClickListener(new View.OnClickListener() {
+  //          @Override
+   //         public void onClick(View v) {
+                // Abrir Activity Guia (por definir)
+   //             Intent intent = new Intent(MainActivity.this, GuiaActivity.class);
+    //            startActivity(intent);
+      //admin      }
+    //    });
+
+        btnCatalogo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Abre la actividad de Guía de Aplicación
-                Intent intent = new Intent(MainActivity.this, GuiaAplicacionActivity.class);
+                // Abrir Activity Catalogo
+                Intent intent = new Intent(MainActivity.this, CatalogoActivity.class);
                 startActivity(intent);
             }
         });
