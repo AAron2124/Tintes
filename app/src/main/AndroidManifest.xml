@@ -36,6 +36,9 @@
         <!-- Colorimetria -->
         <activity android:name=".ColorimetriaActivity" />
 
+        <activity android:name=".NuevoUsuario" android:exported="true" />
+
+        <activity android:name=".ListaUsuariosActivity" android:exported="true" />
 
     </application>
 
