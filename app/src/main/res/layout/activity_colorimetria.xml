@@ -1,74 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFF7FC">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:padding="24dp">
 
-        <!-- Título -->
+        <!-- Título principal -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Colorimetría"
-            android:textSize="22sp"
+            android:text="Elige tu tono perfecto"
+            android:textSize="24sp"
             android:textStyle="bold"
+            android:textColor="#333333"
             android:gravity="center"/>
 
-        <!-- Selector de Subtono -->
+        <!-- Subtítulo -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Basado en tu colorimetría personal"
+            android:textSize="16sp"
+            android:fontFamily="cursive"
+            android:textColor="#555"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Perfil de colorimetría -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Subtono de piel:" />
-        <Spinner
-            android:id="@+id/spinnerSubtono"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:text="Perfil de colorimetría"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
 
-        <!-- Selector de Color de Ojos -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Frío"
+                android:textColor="#3F51B5"
+                android:layout_marginEnd="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cálido"
+                android:textColor="#FF9800"
+                android:layout_marginEnd="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Neutro"
+                android:textColor="#777"/>
+        </LinearLayout>
+
+        <!-- Color de ojos -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Color de ojos:" />
-        <Spinner
-            android:id="@+id/spinnerOjos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:text="Color de ojos"
+            android:textStyle="bold" />
 
-        <!-- Selector de Color Natural de Cabello -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:layout_marginBottom="12dp">
+
+            <CheckBox android:text="Marrón" />
+            <CheckBox android:text="Negro" />
+            <CheckBox android:text="Hazel" />
+            <CheckBox android:text="Verde" />
+            <CheckBox android:text="Azul" />
+            <CheckBox android:text="Ámbar" />
+            <CheckBox android:text="Gris" />
+        </GridLayout>
+
+        <!-- Color de cabello -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Color natural de cabello:" />
-        <Spinner
-            android:id="@+id/spinnerCabello"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:text="Color de cabello natural"
+            android:textStyle="bold" />
 
-        <!-- Botón para obtener sugerencia -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:layout_marginBottom="20dp">
+
+            <CheckBox android:text="Negro" />
+            <CheckBox android:text="Castaño Oscuro" />
+            <CheckBox android:text="Castaño Claro" />
+            <CheckBox android:text="Rubio Oscuro" />
+            <CheckBox android:text="Rubio Claro" />
+            <CheckBox android:text="Rojo" />
+            <CheckBox android:text="Gris/Blanco" />
+        </GridLayout>
+
+        <!-- Color de venas -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Color de venas"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/grupoVenas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <RadioButton
+                android:id="@+id/venasAzules"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Azules/Moradas" />
+
+            <RadioButton
+                android:id="@+id/venasVerdes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Verdosas" />
+
+            <RadioButton
+                android:id="@+id/venasMezcla"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mezcla" />
+        </RadioGroup>
+
+
+        <!-- Botón Analizador -->
         <Button
-            android:id="@+id/btnSugerirTinte"
+            android:id="@+id/btnAnalizar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Obtener sugerencia" />
+            android:text="Analizador de Colorimetría"
+            android:textColor="#FFF"
+            android:layout_marginBottom="24dp"
+            android:padding="12dp"
+            android:fontFamily="sans-serif-medium"
+            android:layout_gravity="center"
+            android:backgroundTint="#673AB7" />
 
-        <!-- Resultado -->
+        <!-- Resultado del perfil -->
         <TextView
-            android:id="@+id/tvResultado"
+            android:id="@+id/tvResultadoPerfil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Tu tono sugerido aparecerá aquí"
-            android:textStyle="italic"
-            android:textAlignment="center"
-            android:textColor="#444"/>
+            android:text="Colorimetría\nTu perfil es cálido"
+            android:textSize="18sp"
+            android:visibility="gone"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Galería de tonos sugeridos -->
+        <LinearLayout
+            android:id="@+id/contenedorTonos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:gravity="center"
+            android:layout_marginBottom="20dp">
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btnVolverMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volver al menú"
+            android:layout_marginTop="16dp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#3F51B5"/>
+
 
     </LinearLayout>
 </ScrollView>

@@ -33,6 +33,10 @@
         <activity android:name=".ClientesActivity" android:exported="true" />
         <activity android:name=".FormularioClienteActivity" android:exported="true" />
 
+        <!-- Colorimetria -->
+        <activity android:name=".ColorimetriaActivity" />
+
+
     </application>
 
 </manifest>

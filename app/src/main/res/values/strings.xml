@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Projecto_Final</string>
+
+
+    <string name="subtono_prompt">Selecciona tu subtono</string>
+
+    <string-array name="subtonos_array">
+        <item>Cálido</item>
+        <item>Frío</item>
+        <item>Neutro</item>
+    </string-array>
+
 </resources>

@@ -41,14 +41,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        //       btnColorimetria.setOnClickListener(new View.OnClickListener() {
- //           @Override
- //           public void onClick(View v) {
+             btnColorimetria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
  //               // Abrir Activity Colorimetria (por definir)
- //               Intent intent = new Intent(MainActivity.this, ColorimetriaActivity.class);
- //               startActivity(intent);
- //           }
- //       });
+                Intent intent = new Intent(MainActivity.this, ColorimetriaActivity.class);
+               startActivity(intent);
+           }
+       });
 
  //       btnGuia.setOnClickListener(new View.OnClickListener() {
   //          @Override
