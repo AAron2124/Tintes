@@ -23,58 +23,42 @@
 
         <TableRow>
             <TextView
-                android:text="Negro 1.0"
+                android:text="Cobre"
                 android:padding="12dp"
                 android:textSize="18sp" />
-
             <View
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="#000000" />
+                android:background="#B87333" />
         </TableRow>
 
         <TableRow>
             <TextView
-                android:text="Castaño oscuro 7.2"
+                android:text="Castaño Avellana"
                 android:padding="12dp"
                 android:textSize="18sp" />
-
             <View
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="#5D4037" />
+                android:background="#8E735B" />
         </TableRow>
 
         <TableRow>
             <TextView
-                android:text="Castaño claro 8"
+                android:text="Miel"
                 android:padding="12dp"
                 android:textSize="18sp" />
-
             <View
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="#8D6E63" />
+                android:background="#DDB67D" />
         </TableRow>
 
         <TableRow>
             <TextView
-                android:text="Rubio 9.0"
+                android:text="Dorado"
                 android:padding="12dp"
                 android:textSize="18sp" />
-
-            <View
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="#F3E5AB" />
-        </TableRow>
-
-        <TableRow>
-            <TextView
-                android:text="Rubio dorado 7.3"
-                android:padding="12dp"
-                android:textSize="18sp" />
-
             <View
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -83,50 +67,79 @@
 
         <TableRow>
             <TextView
-                android:text="Rubio nacarado 7.2"
+                android:text="Castaño Ceniza"
                 android:padding="12dp"
                 android:textSize="18sp" />
-
             <View
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="#FFFACD" />
+                android:background="#6D5843" />
         </TableRow>
 
         <TableRow>
             <TextView
-                android:text="Rubio oscuro"
+                android:text="Rubio Platinado"
                 android:padding="12dp"
                 android:textSize="18sp" />
-
             <View
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="#C2B280" />
+                android:background="#E5E4E2" />
         </TableRow>
 
         <TableRow>
             <TextView
-                android:text="Castaño profundo 5.0"
+                android:text="Chocolate Frío"
                 android:padding="12dp"
                 android:textSize="18sp" />
-
             <View
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="#4E342E" />
+                android:background="#4B3621" />
         </TableRow>
 
         <TableRow>
             <TextView
-                android:text="Pelirrojo cobrizo"
+                android:text="Negro Azulado"
                 android:padding="12dp"
                 android:textSize="18sp" />
-
             <View
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="#B7410E" />
+                android:background="#0D1B2A" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="Chocolate Medio"
+                android:padding="12dp"
+                android:textSize="18sp" />
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#7B3F00" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="Castaño Neutro"
+                android:padding="12dp"
+                android:textSize="18sp" />
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#7E5C3C" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="Rubio Beige"
+                android:padding="12dp"
+                android:textSize="18sp" />
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#F5F5DC" />
         </TableRow>
 
     </TableLayout>
