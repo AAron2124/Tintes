@@ -1,3 +1,4 @@
+// LoginActivity.java
 package com.example.projecto_final;
 
 import android.content.Intent;
@@ -14,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class LoginActivity extends AppCompatActivity {
 
     EditText etUsuario, etPassword;
-    Button btnLogin;
+    Button btnLogin, btnNuevoU; // Añadimos btnNuevoU
     DBHelper dbHelper;
 
     @Override
@@ -25,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         etUsuario = findViewById(R.id.etUsuario);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
+        btnNuevoU = findViewById(R.id.btnNuevoU); // Enlazamos el botón "Registrarse" del layout
 
         dbHelper = new DBHelper(this);
 
@@ -46,6 +48,15 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(LoginActivity.this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        // Listener para el botón "Registrarse"
+        btnNuevoU.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Inicia la actividad NuevoUsuario cuando se hace clic en "Registrarse"
+                startActivity(new Intent(LoginActivity.this, NuevoUsuario.class));
             }
         });
     }
