@@ -1,11 +1,14 @@
+// DBHelper.java
 package com.example.projecto_final;
 
+import android.content.ContentValues; // Importar ContentValues
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
+import java.util.List; // Importar List
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -76,7 +79,7 @@ public class DBHelper extends SQLiteOpenHelper {
         // Tabla Usuarios
         String createTableUsuarios = "CREATE TABLE " + TABLE_USUARIOS + " (" +
                 COL_ID_USUARIO + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                COL_NOMBRE_USUARIO + " TEXT NOT NULL UNIQUE," +
+                COL_NOMBRE_USUARIO + " TEXT NOT NULL UNIQUE," + // UNIQUE para evitar usuarios duplicados
                 COL_PASSWORD + " TEXT NOT NULL);";
 
         // Crear todas las tablas
@@ -114,7 +117,21 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    // Insertar cliente
+    // Método para insertar un nuevo usuario
+    public long insertarUsuario(String nombreUsuario, String password) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_NOMBRE_USUARIO, nombreUsuario);
+        values.put(COL_PASSWORD, password);
+
+        // insert() devuelve el ID de la nueva fila, o -1 si hubo un error
+        long newRowId = db.insert(TABLE_USUARIOS, null, values);
+        db.close();
+        return newRowId;
+    }
+
+
+    // Métodos existentes para Cliente (sin cambios)
     public void insertarCliente(Cliente cliente) {
         SQLiteDatabase db = getWritableDatabase();
         String sql = "INSERT INTO " + TABLE_CLIENTES + " (" +
@@ -134,7 +151,6 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    // Actualizar cliente
     public void actualizarCliente(Cliente cliente) {
         SQLiteDatabase db = getWritableDatabase();
         String sql = "UPDATE " + TABLE_CLIENTES + " SET " +
@@ -155,7 +171,6 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    // Eliminar cliente y devolver true si eliminó 1 o más filas, false si no
     public boolean eliminarCliente(int id) {
         SQLiteDatabase db = getWritableDatabase();
         int filasEliminadas = db.delete(TABLE_CLIENTES, COL_ID_CLIENTE + "=?", new String[]{String.valueOf(id)});
@@ -163,7 +178,6 @@ public class DBHelper extends SQLiteOpenHelper {
         return filasEliminadas > 0;
     }
 
-    // Obtener cliente por ID
     public Cliente obtenerClientePorId(int id) {
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_CLIENTES + " WHERE " + COL_ID_CLIENTE + "=?",
@@ -188,7 +202,6 @@ public class DBHelper extends SQLiteOpenHelper {
         return cliente;
     }
 
-    // Obtener todos los clientes
     public ArrayList<Cliente> obtenerTodosLosClientes() {
         ArrayList<Cliente> lista = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
@@ -212,7 +225,4 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
         return lista;
     }
-
-
-
 }
