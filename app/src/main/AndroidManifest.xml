@@ -36,7 +36,11 @@
         <!-- Colorimetria -->
         <activity android:name=".ColorimetriaActivity" />
 
+        <!-- Inventario -->
+        <activity android:name=".InventarioActivity" android:exported="true" />
+
         <activity android:name=".NuevoUsuario" android:exported="true" />
+
 
         <activity android:name=".ListaUsuariosActivity" android:exported="true" />
 

@@ -22,14 +22,7 @@ public class MainActivity extends AppCompatActivity {
         btnGuia = findViewById(R.id.btnGuia);
         btnCatalogo = findViewById(R.id.btnCatalogo);
 
-//        btnInventario.setOnClickListener(new View.OnClickListener() {
-//            @Override
- //           public void onClick(View v) {
-//                // Abrir Activity Inventario (por definir)
- //               Intent intent = new Intent(MainActivity.this, InventarioActivity.class);
-  //              startActivity(intent);
-    //        }
-      //  });
+
 
         btnClientes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,14 +43,6 @@ public class MainActivity extends AppCompatActivity {
            }
        });
 
- //       btnGuia.setOnClickListener(new View.OnClickListener() {
-  //          @Override
-   //         public void onClick(View v) {
-                // Abrir Activity Guia (por definir)
-   //             Intent intent = new Intent(MainActivity.this, GuiaActivity.class);
-    //            startActivity(intent);
-      //admin      }
-    //    });
 
         btnCatalogo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,5 +52,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnInventario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, InventarioActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
