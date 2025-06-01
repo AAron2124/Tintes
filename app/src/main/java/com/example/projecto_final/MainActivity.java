@@ -33,8 +33,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-             btnColorimetria.setOnClickListener(new View.OnClickListener() {
+        btnColorimetria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
  //               // Abrir Activity Colorimetria (por definir)
@@ -43,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
            }
        });
 
+        btnGuia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, GuiaActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btnCatalogo.setOnClickListener(new View.OnClickListener() {
             @Override

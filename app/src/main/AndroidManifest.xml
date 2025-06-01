@@ -41,6 +41,8 @@
 
         <activity android:name=".NuevoUsuario" android:exported="true" />
 
+        <!-- Guia -->
+        <activity android:name=".GuiaActivity" />
 
         <activity android:name=".ListaUsuariosActivity" android:exported="true" />
 
