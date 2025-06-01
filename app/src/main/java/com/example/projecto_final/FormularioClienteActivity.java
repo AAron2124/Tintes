@@ -94,7 +94,25 @@ public class FormularioClienteActivity extends AppCompatActivity {
             dbHelper.actualizarCliente(cliente);
             Toast.makeText(this, "Cliente actualizado", Toast.LENGTH_SHORT).show();
         }
+
+        //  Lógica automática para inventario
+        if (!tonoTinte.isEmpty()) {
+            if (!dbHelper.existeTinteEnInventario(tonoTinte)) {
+                dbHelper.insertarInventarioItem(tonoTinte, "", 0);
+            }
+
+            InventarioItem item = dbHelper.obtenerInventarioItemPorNombre(tonoTinte);
+            if (item != null) {
+                if (item.getCantidad() > 0) {
+                    dbHelper.actualizarInventarioItem(item.getId(), item.getNombre(), item.getCodigoColor(), item.getCantidad() - 1);
+                } else {
+                    Toast.makeText(this, "Advertencia: no hay stock de " + tonoTinte, Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+
         setResult(RESULT_OK);
         finish(); // Volver a la lista
     }
+
 }

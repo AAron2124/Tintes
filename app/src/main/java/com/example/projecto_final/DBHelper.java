@@ -291,4 +291,30 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
         return lista;
     }
+    public boolean existeTinteEnInventario(String nombre) {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT 1 FROM " + TABLE_INVENTARIO + " WHERE " + COL_NOMBRE_INV + " = ?", new String[]{nombre});
+        boolean existe = cursor.moveToFirst();
+        cursor.close();
+        db.close();
+        return existe;
+    }
+    public InventarioItem obtenerInventarioItemPorNombre(String nombre) {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_INVENTARIO + " WHERE " + COL_NOMBRE_INV + " = ?", new String[]{nombre});
+        InventarioItem item = null;
+
+        if (cursor.moveToFirst()) {
+            item = new InventarioItem();
+            item.setId(cursor.getInt(cursor.getColumnIndexOrThrow(COL_ID_INV)));
+            item.setNombre(cursor.getString(cursor.getColumnIndexOrThrow(COL_NOMBRE_INV)));
+            item.setCodigoColor(cursor.getString(cursor.getColumnIndexOrThrow(COL_CODIGO_COLOR_INV)));
+            item.setCantidad(cursor.getInt(cursor.getColumnIndexOrThrow(COL_CANTIDAD)));
+        }
+
+        cursor.close();
+        db.close();
+        return item;
+    }
+
 }
